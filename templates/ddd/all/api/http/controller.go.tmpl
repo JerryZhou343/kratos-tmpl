@@ -1,0 +1,25 @@
+package http
+
+
+import (
+	"context"
+	"github.com/golang/protobuf/ptypes/empty"
+	"{{.ModName}}/app/executor/cmd"
+	"{{.ModName}}/app/executor/query"
+	"{{.ModName}}/assembler/demo"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+)
+
+
+type Controller struct {
+	cmdApp   *cmd.AppCmd
+	queryApp *query.AppQuery
+}
+
+func NewController(cmdApp *cmd.AppCmd, queryApp *query.AppQuery) *Controller {
+	return &Controller{
+		cmdApp:   cmdApp,
+		queryApp: queryApp,
+	}
+}

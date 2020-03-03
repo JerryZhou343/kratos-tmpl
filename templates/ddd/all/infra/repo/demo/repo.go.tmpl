@@ -1,0 +1,23 @@
+package demo
+
+import (
+	"context"
+	"fmt"
+	"{{.ModName}}/domain/aggregate/demo"
+	"{{.ModName}}/infra/conf"
+	"{{.ModName}}/infra/repo/demo/ent"
+	entDemo "{{.ModName}}/infra/repo/demo/ent/demo"
+)
+
+type repo struct {
+	client *ent.Client
+}
+
+func NewRepo(conf *conf.Config) (demo.Repo, error) {
+	client, err := ent.Open("mysql", conf.SQL.DSN)
+	fmt.Printf("dsn: %v\n", conf.SQL.DSN)
+	if err != nil {
+		return nil, err
+	}
+	return &repo{client: client}, nil
+}

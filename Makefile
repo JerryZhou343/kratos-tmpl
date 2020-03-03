@@ -1,12 +1,10 @@
 .PHONY: all clean
 
-OUTPUT=kratos-ddd
+OUTPUT=kratos-tmpl
 
-all: clean wire
-	go build  -v -o ./bin/${OUTPUT} cmd/main.go
+all: clean
+	go build  -v -o ./bin/${OUTPUT} main.go new.go project.go
 
 clean:
 	rm -f ./bin/${OUTPUT}
 
-wire:
-	wire gen ./di

@@ -1,0 +1,10 @@
+package repo
+
+import (
+	"github.com/google/wire"
+	"{{.ModName}}"
+)
+
+var (
+	Provider = wire.NewSet(demo.NewRepo)
+)

@@ -1,0 +1,21 @@
+package query
+
+import (
+	"context"
+	"github.com/bilibili/kratos/pkg/log"
+	"{{.ModName}}/domain/aggregate/demo"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+)
+
+type AppQuery struct {
+	demoRepo demo.Repo
+}
+
+func NewAppQuery(demoRepo demo.Repo) *AppQuery {
+	return &AppQuery{
+		demoRepo: demoRepo,
+	}
+}
+
+

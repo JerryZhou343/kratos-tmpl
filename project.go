@@ -31,6 +31,7 @@ type project struct {
 	path      string
 	style     string
 	transport string
+	SvcName string
 }
 
 var p project

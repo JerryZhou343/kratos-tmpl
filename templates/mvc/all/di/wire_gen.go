@@ -14,7 +14,7 @@ import (
 	"github.com/mfslog/kratos-mvc/infra/server/grpc"
 )
 
-// Injectors from wire.go.templates:
+// Injectors from wire.go.tmpl.templates:
 
 func InitApp() (*App, func(), error) {
 	config, err := conf.NewConf()

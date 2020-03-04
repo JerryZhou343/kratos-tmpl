@@ -1,0 +1,15 @@
+package grpc
+
+import (
+	"github.com/bilibili/kratos/pkg/net/rpc/warden"
+	"{{.ModName}}/infra/conf"
+	stub "{{.ModName}}/proto"
+)
+
+// New new a grpc server.
+func New(svc stub.{{.SvcName}}Server, config *conf.Config) (ws *warden.Server, err error) {
+	ws = warden.NewServer(config.Grpc)
+	stub.Register{{.SvcName}}Server(ws.Server(), svc)
+	ws, err = ws.Start()
+	return
+}

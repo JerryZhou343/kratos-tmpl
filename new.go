@@ -20,7 +20,7 @@ func runNew() (err error) {
 		pwd, _ := os.Getwd()
 		p.path = filepath.Join(pwd, p.Name)
 	}
-	p.ModName = modPath(p.path)
+	//p.ModName = modPath(p.path)
 	// creata a project
 	if err := create(); err != nil {
 		return err

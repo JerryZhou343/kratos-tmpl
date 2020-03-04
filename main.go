@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/spf13/cobra"
+	"strings"
 )
 
 func main() {
@@ -21,6 +22,9 @@ go mod 前缀为必填参数,项目名为必填参数`,
 				if p.Name == "" || p.ModName == "" {
 					return errors.New("缺少必填标志(flag)")
 				}
+
+				//todo:检测服务名
+				p.SvcName = strings.ToUpper(string(p.Name[0]))+string(p.Name[1:])
 				return runNew()
 			},
 		}

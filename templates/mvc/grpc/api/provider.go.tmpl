@@ -1,0 +1,14 @@
+package api
+
+import (
+	"github.com/google/wire"
+	"{{.ModName}}/api/rpc"
+	"{{.ModName}}/app"
+	stub "{{.ModName}}/proto"
+)
+
+var (
+	Provider = wire.NewSet(rpc.NewHandler, wire.Bind(new(stub.{{.SvcName}}Server), new(*rpc.Handler)),
+		app.AppProvider,
+	)
+)

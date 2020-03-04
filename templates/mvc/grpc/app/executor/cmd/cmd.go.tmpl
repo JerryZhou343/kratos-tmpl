@@ -1,0 +1,15 @@
+package cmd
+
+import (
+	"{{.ModName}}/model/demo"
+)
+
+type AppCmd struct {
+	demoRepo demo.Repo
+}
+
+func NewAppCmd(demoRepo demo.Repo) *AppCmd {
+	return &AppCmd{
+		demoRepo: demoRepo,
+	}
+}

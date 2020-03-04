@@ -1,0 +1,17 @@
+package query
+
+import (
+	"{{.ModName}}/model/demo"
+)
+
+type AppQuery struct {
+	demoRepo demo.Repo
+}
+
+func NewAppQuery(demoRepo demo.Repo) *AppQuery {
+	return &AppQuery{
+		demoRepo: demoRepo,
+	}
+}
+
+

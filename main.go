@@ -4,10 +4,17 @@ import (
 	"errors"
 	"fmt"
 	"github.com/spf13/cobra"
+	"regexp"
 	"strings"
 )
 
+const (
+	NAME_PATTERN= "^[a-zA-Z_]"
+)
+
 func main() {
+
+	re := regexp.MustCompile(NAME_PATTERN)
 	var (
 		rootCmd = &cobra.Command{
 			Version: "v0.0.0",
@@ -22,9 +29,12 @@ go mod 前缀为必填参数,项目名为必填参数`,
 				if p.Name == "" || p.ModName == "" {
 					return errors.New("缺少必填标志(flag)")
 				}
+				if !re.MatchString(p.Name){
+					return errors.New("服务必须为字母")
+				}
 
-				//todo:检测服务名
 				p.SvcName = strings.ToUpper(string(p.Name[0]))+string(p.Name[1:])
+
 				return runNew()
 			},
 		}
@@ -33,8 +43,9 @@ go mod 前缀为必填参数,项目名为必填参数`,
 	rootCmd.Flags().StringVarP(&p.path, "path", "p", ".", "项目生成目录")
 	rootCmd.Flags().StringVarP(&p.ModName, "mod", "m", "", "go mod 前缀,必填")
 	rootCmd.Flags().StringVarP(&p.Name, "name", "n", "", "项目名称,必填")
-	rootCmd.Flags().StringVarP(&p.transport, "transport", "t", transport_grpc,
-		fmt.Sprintf("传输方式[%s,%s,%s]", transport_all, transport_grpc, transport_http))
+	//rootCmd.Flags().StringVarP(&p.transport, "transport", "t", transport_grpc,
+	//	fmt.Sprintf("传输方式[%s,%s,%s]", transport_all, transport_grpc, transport_http))
+	p.transport = transport_grpc
 	rootCmd.Flags().StringVarP(&p.style, "style", "s", style_ddd,
 		fmt.Sprintf("模板风格[%s,%s]", style_ddd, style_mvc))
 	rootCmd.Execute()

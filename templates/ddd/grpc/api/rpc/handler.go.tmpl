@@ -28,7 +28,7 @@ func (h *Handler) Ping(ctx context.Context, req *empty.Empty) (rsp *empty.Empty,
 	return
 }
 
-func(h *Handler)SayHello(ctx context.Context, in *api.HelloReq) (*empty.Empty, error){
+func(h *Handler)SayHello(ctx context.Context, in *{{.Name}}.HelloReq) (*empty.Empty, error){
 	rsp := &empty.Empty{}
 	return rsp, nil
 }

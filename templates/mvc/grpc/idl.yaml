@@ -2,15 +2,15 @@
 #导入目录
 includes:
   - $GOPATH/src/github.com/bilibili/kratos/third_party
-  - ./proto/
+  - ./genproto/
 
 #当前项目依赖的proto文件
 depends:
-  - kratos.proto
+  - kratos.genproto
 
 
 excludes:
-  - github.com/gogo/protobuf/gogoproto/gogo.proto
+  - github.com/gogo/protobuf/gogoproto/gogo.genproto
   - google
 
 #编译设置
@@ -20,4 +20,4 @@ generate:
     plugins:
       - name: gofast
         flags: plugins=grpc
-        output: ./proto
+        output: ./genproto

@@ -1,11 +1,11 @@
-// 定义项目 API 的 proto 文件 可以同时描述 gRPC 和 HTTP API
+// 定义项目 API 的 genproto 文件 可以同时描述 gRPC 和 HTTP API
 // protobuf 文件参考:
 //  - https://developers.google.com/protocol-buffers/
 syntax = "proto3";
 
 import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 import "google/protobuf/empty.proto";
-import "google/api/annotations.proto";
+import "google/api/annotations.genproto";
 
 // package 命名使用 {appid}.{version} 的方式, version 形如 v1, v2 ..
 package {{.Name}}.service.v1;

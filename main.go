@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	NAME_PATTERN= "^[a-zA-Z_]"
+	NAME_PATTERN = "^[a-zA-Z_]"
 )
 
 func main() {
@@ -29,11 +29,11 @@ go mod 前缀为必填参数,项目名为必填参数`,
 				if p.Name == "" || p.ModName == "" {
 					return errors.New("缺少必填标志(flag)")
 				}
-				if !re.MatchString(p.Name){
+				if !re.MatchString(p.Name) {
 					return errors.New("服务必须为字母")
 				}
 
-				p.SvcName = strings.ToUpper(string(p.Name[0]))+string(p.Name[1:])
+				p.SvcName = strings.ToUpper(string(p.Name[0])) + string(p.Name[1:])
 
 				return runNew()
 			},

@@ -5,7 +5,7 @@ import (
 	"github.com/golang/protobuf/ptypes/empty"
 	"{{.ModName}}/app/executor/cmd"
 	"{{.ModName}}/app/executor/query"
-	api "{{.ModName}}/proto"
+	{{.Name}} "{{.ModName}}/genproto/{{.ModName}}/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -33,7 +33,7 @@ func(h *Handler)SayHello(ctx context.Context, in *api.HelloReq) (*empty.Empty, e
 	return rsp, nil
 }
 
-func(h *Handler)SayHelloURL(ctx context.Context, in *api.HelloReq) (*api.HelloResp, error){
+func(h *Handler)SayHelloURL(ctx context.Context, in *{{.Name}}.HelloReq) (*{{.Name}}.HelloResp, error){
 	rsp := &api.HelloResp{
 		Content:              "hello :"+in.Name,
 	}

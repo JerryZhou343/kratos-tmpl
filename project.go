@@ -40,18 +40,18 @@ var p project
 func create() (err error) {
 	var box *packr.Box
 	if p.style == style_mvc {
-		box = packr.New("all", "./templates/mvc/all")
+		box = packr.New("mvc.all", "./templates/mvc/all")
 		if p.transport == transport_http {
-			box = packr.New("http", "./templates/mvc/http")
+			box = packr.New("mvc.http", "./templates/mvc/http")
 		} else if p.transport == transport_grpc {
-			box = packr.New("grpc", "./templates/mvc/grpc")
+			box = packr.New("mvc.grpc", "./templates/mvc/grpc")
 		}
 	} else {
-		box = packr.New("all", "./templates/ddd/all")
+		box = packr.New("ddd.all", "./templates/ddd/all")
 		if p.transport == transport_http {
-			box = packr.New("http", "./templates/ddd/http")
+			box = packr.New("ddd.http", "./templates/ddd/http")
 		} else if p.transport == transport_grpc {
-			box = packr.New("grpc", "./templates/ddd/grpc")
+			box = packr.New("ddd.grpc", "./templates/ddd/grpc")
 		}
 	}
 	if err = os.MkdirAll(p.path, 0755); err != nil {

@@ -36,8 +36,8 @@ func runNew() (err error) {
 func modPath(p string) string {
 	dir := filepath.Dir(p)
 	for {
-		if _, err := os.Stat(filepath.Join(dir, "go.mod")); err == nil {
-			content, _ := ioutil.ReadFile(filepath.Join(dir, "go.mod"))
+		if _, err := os.Stat(filepath.Join(dir, "go.mod.tmpl")); err == nil {
+			content, _ := ioutil.ReadFile(filepath.Join(dir, "go.mod.tmpl"))
 			mod := common.RegexpReplace(`module\s+(?P<name>[\S]+)`, string(content), "$name")
 			name := strings.TrimPrefix(filepath.Dir(p), dir)
 			name = strings.TrimPrefix(name, string(os.PathSeparator))

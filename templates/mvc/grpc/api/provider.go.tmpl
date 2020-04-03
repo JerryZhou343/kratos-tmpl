@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Provider = wire.NewSet(rpc.NewHandler, wire.Bind(new(stub.{{.SvcName}}Server), new(*rpc.Handler)),
+	Provider = wire.NewSet(rpc.NewHandler, wire.Bind(new(stub.{{.SvcName}}ServiceServer), new(*rpc.Handler)),
 		app.AppProvider,
 	)
 )

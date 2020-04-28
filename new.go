@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	common "github.com/bilibili/kratos/tool/pkg"
+	common "github.com/go-kratos/kratos/tool/pkg"
 )
 
 func runNew() (err error) {

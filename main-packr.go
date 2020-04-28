@@ -5,4 +5,4 @@
 // and any other packr generated files.
 package main
 
-import _ "github.com/mfslog/kratos-tmpl/packrd"
+import _ "github.com/JerryZhou343/kratos-tmpl/packrd"

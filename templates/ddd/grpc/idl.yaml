@@ -10,7 +10,7 @@ protos:
   - usermgt/user.proto
 #依赖导入目录
 includes:
-  - $GOPATH/src/github.com/bilibili/kratos/third_party
+  - $GOPATH/src/github.com/go-kratos/kratos/third_party
 
 
 ####################lint配置####################

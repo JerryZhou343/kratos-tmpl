@@ -1,7 +1,7 @@
 # kratos-tmpl
-基于哔哩哔哩 kratos 建立的项目模板脚手架模板代码风格有MVC 和 DDD 两种风格，传输方式都为GRPC方式；详细
-参数请查看帮助 
+基于哔哩哔哩 kratos 建立的项目模板脚手架模板代码风格有MVC 和 DDD 两种风格，传输方式都为GRPC方式。
 
+帮助信息: 
 ```shell script
 kratos-tmpl -h
 模板项目生成工具，

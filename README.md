@@ -22,4 +22,4 @@ Flags:
 ```
 
 # 周边
-[proto 编译辅助工具](https://github.com/mfslog/prototool])
+[proto 编译辅助工具](https://github.com/JerryZhou343/prototool])

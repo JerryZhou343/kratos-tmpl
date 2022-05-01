@@ -1,0 +1,8 @@
+package adapter
+
+import (
+	"github.com/google/wire"
+	"{{.Site}}/{{.Group}}/{{.Project}}/adapter/handler"
+)
+
+var ProviderSet = wire.NewSet(handler.NewHandler)

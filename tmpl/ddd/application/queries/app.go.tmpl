@@ -1,0 +1,15 @@
+package queries
+
+import (
+	"github.com/go-kratos/kratos/v2/log"
+)
+
+type AppService struct {
+	log *log.Helper
+}
+
+func NewService(logger log.Logger) *AppService {
+	return &AppService{
+		log: log.NewHelper(log.With(logger, "module", "app/queries/user")),
+	}
+}

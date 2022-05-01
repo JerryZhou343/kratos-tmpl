@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package {{.Site}}.{{.Group}}.{{.Project}}.v1;
+
+option go_package = "{{.Site}}/{{.Group}}/{{.Project}}/v1;{{.Project}}";
+
+
+import "v1/resources.proto";
+
+service {{.Project}} {
+
+};

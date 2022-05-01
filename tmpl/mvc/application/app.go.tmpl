@@ -1,0 +1,13 @@
+package application
+
+import (
+	"github.com/google/wire"
+)
+
+var ProviderSet = wire.NewSet(NewService)
+
+type Service struct{}
+
+func NewService() *Service {
+	return &Service{}
+}

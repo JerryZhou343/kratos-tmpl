@@ -1,0 +1,20 @@
+package handler
+
+import (
+	"{{.Site}}/{{.Group}}/{{.Project}}/application/commands"
+	"{{.Site}}/{{.Group}}/{{.Project}}/application/queries"
+	stub "{{.Site}}/{{.Group}}/{{.Project}}/genproto/{{.Site}}/{{.Group}}/{{.Project}}/v1"
+)
+
+type Handler struct {
+	stub.Unimplemented{{ CamelCase .Project }}Server
+	queryApp *queries.AppService
+	cmdApp   *commands.AppService
+}
+
+func NewHandler(queryApp *queries.AppService, cmdApp *commands.AppService) *Handler {
+	return &Handler{
+		queryApp: queryApp,
+		cmdApp:   cmdApp,
+	}
+}

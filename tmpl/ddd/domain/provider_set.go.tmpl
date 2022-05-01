@@ -1,0 +1,9 @@
+package domain
+
+import (
+	"github.com/google/wire"
+	"{{.Site}}/{{.Group}}/{{.Project}}/domain/factory"
+	"{{.Site}}/{{.Group}}/{{.Project}}/domain/service"
+)
+
+var ProviderDomainSet = wire.NewSet(service.NewService, factory.NewObjectBuilder)

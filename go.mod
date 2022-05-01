@@ -1,9 +1,12 @@
 module github.com/JerryZhou343/kratos-tmpl
 
-go 1.14
+go 1.17
 
 require (
-	github.com/go-kratos/kratos v0.4.2
-	github.com/gobuffalo/packr/v2 v2.7.1
-	github.com/spf13/cobra v0.0.6
+	github.com/pkg/errors v0.9.1
+	github.com/spf13/cobra v1.4.0
+	github.com/spf13/pflag v1.0.5
+	google.golang.org/protobuf v1.28.0
 )
+
+require github.com/inconshreveable/mousetrap v1.0.0 // indirect

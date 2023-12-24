@@ -1,0 +1,18 @@
+package api
+
+import (
+	"{{.GoMod}}{{.RelativePath}}/app/commands"
+	"{{.GoMod}}{{.RelativePath}}/app/queries"
+)
+
+type Handler struct {
+	queryApp *queries.AppService
+	cmdApp   *commands.AppService
+}
+
+func NewHandler(queryApp *queries.AppService, cmdApp *commands.AppService) *Handler {
+	return &Handler{
+		queryApp: queryApp,
+		cmdApp:   cmdApp,
+	}
+}

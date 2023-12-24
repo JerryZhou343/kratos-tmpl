@@ -1,0 +1,25 @@
+package commands
+
+import (
+	"github.com/go-kratos/kratos/v2/log"
+	"{{.GoMod}}{{.RelativePath}}/domain/factory"
+	"{{.GoMod}}{{.RelativePath}}/domain/service"
+)
+
+type AppService struct {
+	log           *log.Helper
+	builder       *factory.ObjectBuilder
+	domainService *service.Service
+}
+
+func NewService(
+	logger log.Logger,
+	builder *factory.ObjectBuilder,
+	domainService *service.Service,
+) *AppService {
+	return &AppService{
+		log:           log.NewHelper(log.With(logger, "module", "app/user/commands")),
+		builder:       builder,
+		domainService: domainService,
+	}
+}

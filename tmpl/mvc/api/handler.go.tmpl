@@ -1,0 +1,15 @@
+package handler
+
+import (
+	"{{.GoMod}}{{.RelativePath}}/app"
+)
+
+type Handler struct {
+	appSvc *app.Service
+}
+
+func NewHandler( appSvc *application.Service) *Handler {
+	return &Handler{
+		appSvc:appSvc,
+	}
+}

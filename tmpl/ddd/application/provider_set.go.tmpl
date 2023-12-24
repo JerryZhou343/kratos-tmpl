@@ -1,9 +1,0 @@
-package app
-
-import (
-	"github.com/google/wire"
-	"{{.Site}}/{{.Group}}/{{.Project}}/application/commands"
-	"{{.Site}}/{{.Group}}/{{.Project}}/application/queries"
-)
-
-var ProviderAppSet = wire.NewSet(commands.NewService, queries.NewService)

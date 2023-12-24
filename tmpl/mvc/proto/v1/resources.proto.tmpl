@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-// package 命名使用 {appid}.{version} 的方式, version 形如 v1, v2 ..
-package {{.Site}}.{{.Group}}.{{.Project}}.v1;
-
-option go_package = "{{.Site}}/{{.Group}}/{{.Project}}/v1;{{.Project}}";
-
